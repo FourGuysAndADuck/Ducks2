@@ -23,7 +23,7 @@ public class ClientsController {
         return clientRepository.findAll();
     }
 
-
+    //Basic CRUD
     @GetMapping("/{id}")
     public Client getClient(@PathVariable Long id) {
         return clientRepository.findById(id).orElseThrow(RuntimeException::new);
