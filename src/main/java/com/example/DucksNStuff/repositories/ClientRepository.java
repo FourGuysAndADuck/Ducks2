@@ -1,6 +1,6 @@
-package com.example.springreactbaeldung.repositories;
+package com.example.DucksNStuff.repositories;
 
-import com.example.springreactbaeldung.data.Client;
+import com.example.DucksNStuff.data.Client;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClientRepository extends JpaRepository<Client, Long> {

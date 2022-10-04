@@ -1,4 +1,4 @@
-package com.example.springreactbaeldung.data;
+package com.example.DucksNStuff.data;
 
 
 import lombok.AllArgsConstructor;

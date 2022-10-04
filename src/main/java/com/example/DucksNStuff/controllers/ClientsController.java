@@ -1,7 +1,7 @@
-package com.example.springreactbaeldung.controllers;
+package com.example.DucksNStuff.controllers;
 
-import com.example.springreactbaeldung.data.Client;
-import com.example.springreactbaeldung.repositories.ClientRepository;
+import com.example.DucksNStuff.data.Client;
+import com.example.DucksNStuff.repositories.ClientRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

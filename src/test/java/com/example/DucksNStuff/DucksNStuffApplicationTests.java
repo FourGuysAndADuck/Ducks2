@@ -1,10 +1,10 @@
-package com.example.springreactbaeldung;
+package com.example.DucksNStuff;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringReactBaeldungApplicationTests {
+class DucksNStuffApplicationTests {
 
     @Test
     void contextLoads() {
