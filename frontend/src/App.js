@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
 import {Component} from "react";
+import Navbar from "./components/Navbar"
+import {useState} from "react";
 
 class App extends Component {
   state = {
@@ -27,21 +27,14 @@ class App extends Component {
 
   render() {
     const {clients} = this.state;
-    return (
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <div className="App-intro">
-              <h2>Clients</h2>
-              {clients.map(client =>
-                  <div key={client.id}>
-                    {client.name} ({client.email})
-                  </div>
-              )}
-            </div>
-          </header>
-        </div>
-    );
+
+      return (
+          <>
+          <div className="App">
+              <Navbar/>
+          </div>
+          </>
+      );
   }
 }
 
