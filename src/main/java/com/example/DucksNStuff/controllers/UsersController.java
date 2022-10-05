@@ -68,6 +68,4 @@ public class UsersController {
         //Return 200, ok.
         return ResponseEntity.ok(originalUser);
     }
-
-
 }
