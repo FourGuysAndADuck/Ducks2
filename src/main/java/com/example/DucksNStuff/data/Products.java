@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,4 +18,20 @@ public class Products {
     @Id
     @GeneratedValue
     private long id;
+
+    //store id fk?
+
+    @Column
+    private String name;
+
+    @Column
+    private String imageURL;
+
+    @Column
+    private long stock;
+
+    @Column
+    private double price;
+
+    //Join Table for Category
 }

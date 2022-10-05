@@ -29,7 +29,7 @@ public class Stores {
     private String name;
 
     //TODO: Create products
-//    private List<Products> Inventory;
+    //private List<Products> Inventory;
 
     //Again with the address issue..
 
