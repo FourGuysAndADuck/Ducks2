@@ -1,6 +1,5 @@
 import {Component} from "react";
-import Navbar from "./components/Navbar"
-import {useState} from "react";
+import NavbarComponent from "./components/Navbar"
 
 class App extends Component {
   state = {
@@ -31,7 +30,7 @@ class App extends Component {
       return (
           <>
           <div className="App">
-              <Navbar/>
+              <NavbarComponent/>
           </div>
           </>
       );
