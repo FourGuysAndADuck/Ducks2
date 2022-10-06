@@ -1,40 +1,18 @@
-import {Component} from "react";
 import NavbarComponent from "./components/Navbar"
+import Footer from "./components/Footer";
+import '@coreui/coreui/dist/css/coreui.min.css'
 
-class App extends Component {
-  state = {
-    clients: []
-  };
-
-  async componentDidMount() {
-
-   let body = await fetch("http://localhost:8080/clients/",{
-      headers:{
-        "accepts":"application/json",
-          "Access-Control-Allow-Origin": "*"
-  }
-    })
-        .then(res => {
-          console.log(res);
-          return res.json();
-        })
-
-
-    this.setState({clients: body});
-    console.log(this.state)
-  }
-
-  render() {
-    const {clients} = this.state;
+function App(props) {
+    // const {clients} = this.state;
 
       return (
           <>
           <div className="App">
               <NavbarComponent/>
+              <Footer/>
           </div>
           </>
       );
-  }
 }
 
 export default App;
