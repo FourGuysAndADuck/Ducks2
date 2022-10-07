@@ -34,7 +34,7 @@ public class UsersController {
 
     //Add new user
     @CrossOrigin
-    @PostMapping
+    @PostMapping("/signup")
     public ResponseEntity createUser(@RequestBody Users newUser) throws URISyntaxException {
         Users createdUser = usersRepository.save(newUser);
         //return 201
