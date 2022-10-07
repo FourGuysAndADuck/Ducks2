@@ -34,8 +34,11 @@ public class UsersController {
 
     //Add new user
     @CrossOrigin
-    @PostMapping
+    @PostMapping("/signup")
     public ResponseEntity createUser(@RequestBody Users newUser) throws URISyntaxException {
+
+        //TODO:Add encryption for password, Spring Security
+
         Users createdUser = usersRepository.save(newUser);
         //return 201
         return ResponseEntity.created(new URI("/users/" + createdUser.getId())).body(createdUser);
