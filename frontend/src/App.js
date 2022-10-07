@@ -1,40 +1,37 @@
-import {Component} from "react";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+
 import NavbarComponent from "./components/Navbar"
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
+import Help from "./components/Help";
+import Checkout from "./components/Checkout";
+import NotFound from "./components/NotFound";
 
-class App extends Component {
-  state = {
-    clients: []
-  };
+import '@coreui/coreui/dist/css/coreui.min.css'
 
-  async componentDidMount() {
-
-   let body = await fetch("http://localhost:8080/clients/",{
-      headers:{
-        "accepts":"application/json",
-          "Access-Control-Allow-Origin": "*"
-  }
-    })
-        .then(res => {
-          console.log(res);
-          return res.json();
-        })
-
-
-    this.setState({clients: body});
-    console.log(this.state)
-  }
-
-  render() {
-    const {clients} = this.state;
-
+function App() {
       return (
-          <>
-          <div className="App">
-              <NavbarComponent/>
-          </div>
-          </>
+          <Router>
+              <div className="App">
+                  <NavbarComponent/>
+                  <div className="content">
+                      <Routes>
+                          <Route path="/" element={<Home/>}/>
+                          <Route path="/contact" element={<Contact/>}/>
+                          <Route path="/login" element={<Login/>}/>
+                          <Route path="/signup" element={<SignUp/>}/>
+                          <Route path="/help" element={<Help/>}/>
+                          <Route path="/checkout" element={<Checkout/>}/>
+                          <Route path="*" element={<NotFound/>}/>
+                      </Routes>
+                  </div>
+                  <Footer/>
+              </div>
+          </Router>
       );
-  }
 }
 
 export default App;
