@@ -14,12 +14,12 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/store")
+@RequestMapping("api/store")
 public class StoresController {
     //Injection
     StoresRepository storesRepository;
 
-    //TODO:Get Store info
+    //DONE:Get Store info
     @CrossOrigin
     @GetMapping("/{id}")
     public Optional<Stores> fetchStoreById(@PathVariable long id){
@@ -27,7 +27,7 @@ public class StoresController {
     }
 
 
-    //TODO:Create New Store
+    //DONE:Create New Store
     @CrossOrigin
     @GetMapping("/create")
     public ResponseEntity createStore(@RequestBody Stores newStore) throws URISyntaxException {
@@ -35,7 +35,7 @@ public class StoresController {
         //return 201
         return ResponseEntity.created(new URI("/store/" + createdStore.getId())).body(createdStore);
     }
-    //TODO:Update Store
+    //DONE:Update Store
     @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity updateStore(@PathVariable long id, @RequestBody Stores updatedStore){
@@ -52,7 +52,7 @@ public class StoresController {
         return ResponseEntity.ok(originalStore);
         }
 
-    //TODO:Delete Store
+    //DONE:Delete Store
     @CrossOrigin
     @DeleteMapping("/{id}")
     public ResponseEntity deleteStore(@PathVariable long id){

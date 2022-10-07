@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/api/products")
 public class ProductsController {
     //Repository Injection
     ProductsRepository productsRepository;
@@ -39,7 +39,7 @@ public class ProductsController {
         return ResponseEntity.created(new URI("/products/" + createdProduct.getId())).body(createdProduct);
     }
 
-    //TODO:Update new Product
+    //DONE:Update new Product
     @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity updateUser(@RequestBody Products updatedProduct, @PathVariable long id){
@@ -55,7 +55,7 @@ public class ProductsController {
         return ResponseEntity.ok(originalProduct);
     }
 
-    //TODO:Delete a product
+    //DONE:Delete a product
     @CrossOrigin
     @DeleteMapping("/{id}")
     public ResponseEntity deleteUser(@PathVariable long id){
