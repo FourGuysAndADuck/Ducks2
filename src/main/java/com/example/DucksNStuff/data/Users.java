@@ -33,7 +33,7 @@ public class Users {
     @Column
     private String email;
 
-    //Shipping address class?
+    //DONE: Not making address object, hard coded into multiple columns.
     @Column
     private String streetAddress;
 
@@ -43,9 +43,9 @@ public class Users {
     @Column
     private String zipCode;
 
+    //TODO: Spring Security to Hash pw
     @Column
     private String password;
-
 
     @Column
     private Date userCreatedAt;

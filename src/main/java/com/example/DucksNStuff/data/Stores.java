@@ -15,14 +15,14 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "stores")
-
 public class Stores {
 
     @Id
     @GeneratedValue
     private long id;
 
-    //userid? maybe use inheritance.
+    //TODO:Stores should belong to a user.
+    //userid? maybe use inheritance?
 
     private String name;
 
@@ -38,8 +38,10 @@ public class Stores {
     @Column
     private String shopZipCode;
 
+    @Column
     private long phoneNumber;
 
+    @Column
     private Date storeCreatedAt;
 
     //TODO: Create Orders, join table as well?

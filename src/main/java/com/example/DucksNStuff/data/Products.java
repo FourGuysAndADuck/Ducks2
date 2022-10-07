@@ -19,7 +19,8 @@ public class Products {
     @GeneratedValue
     private long id;
 
-    //store id fk?
+    //TODO:
+    //store id fk? to tell what store "owns" each product
 
     @Column
     private String name;
@@ -33,5 +34,6 @@ public class Products {
     @Column
     private double price;
 
+    //TODO: vvvv
     //Join Table for Category
 }
