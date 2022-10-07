@@ -2,12 +2,12 @@ import {Component} from "react";
 
 class DB extends Component {
     state = {
-        clients: []
+        users: []
     };
 
     async componentDidMount() {
 
-        let body = await fetch("http://localhost:8080/clients/",{
+        let body = await fetch("http://localhost:8080/users/",{
             headers:{
                 "accepts":"application/json",
                 "Access-Control-Allow-Origin": "*"
@@ -19,7 +19,7 @@ class DB extends Component {
             })
 
 
-        this.setState({clients: body});
+        this.setState({users: body});
         console.log(this.state)
     }
 }

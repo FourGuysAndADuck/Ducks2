@@ -39,9 +39,9 @@ const SignUp = () => {
 
         setIsPending(true);
 
-        fetch('http://localhost:8080/api/users', {
+        fetch('http://localhost:8080/api/users/signup', {
             method: 'POST',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*"},
             body: JSON.stringify(newUser)
         }).then(() => {
             console.log('new user added');
