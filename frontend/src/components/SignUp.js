@@ -11,20 +11,21 @@ import {
 } from "@coreui/react";
 
 import {useState} from "react";
-import {useHistory} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const SignUp = () => {
 
-    const [first_name, setFirst_name]  = useState('');
-    const [last_name, setLast_name]  = useState('');
+    const [firstName, setFirstname]  = useState('');
+    const [lastName, setLastname]  = useState('');
     const [username, setUsername]  = useState('');
+    const [email, setEmail]  = useState('');
     const [password, setPassword]  = useState('');
-    const [state_address, setState_address]  = useState('');
-    const [street_address, setStreet_address]  = useState('');
-    const [zip_code, setZip_code]  = useState('');
+    const [stateAddress, setStateAddress]  = useState('');
+    const [streetAddress, setStreetAddress]  = useState('');
+    const [zipCode, setZipCode]  = useState('');
     const [isPending, setIsPending] = useState(false);
-    const history = useHistory();
-    const [validated, setValidated] = useState(false)
+    const [validated, setValidated] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
           const form = e.currentTarget
@@ -34,7 +35,7 @@ const SignUp = () => {
               }
           setValidated(true)
 
-        const newUser = {first_name, last_name, username, password, state_address, street_address, zip_code};
+        const newUser = {firstName, lastName, username, email, password, stateAddress, streetAddress, zipCode};
 
         setIsPending(true);
 
@@ -45,7 +46,7 @@ const SignUp = () => {
         }).then(() => {
             console.log('new user added');
             setIsPending(false);
-            history.push('/login');
+            navigate('/login');
         })
     }
 
@@ -62,10 +63,10 @@ const SignUp = () => {
                     type="text"
                     placeholder="Enter first name"
                     feedbackValid="Looks good!"
-                    id="validationCustom01"
+                    id="firstName"
                     label="First name"
                     required
-                    onChange={(e) => setFirst_name(e.target.value)}
+                    onChange={(e) => setFirstname(e.target.value)}
                   />
                 </CCol>
                 <CCol md={4}>
@@ -73,11 +74,22 @@ const SignUp = () => {
                     type="text"
                     placeholder="Enter last name"
                     feedbackValid="Looks good!"
-                    id="validationCustom02"
+                    id="lastName"
                     label="Last name"
                     required
-                    onChange={(e) => setLast_name(e.target.value)}
+                    onChange={(e) => setLastname(e.target.value)}
                   />
+                </CCol>
+                <CCol md={4}>
+                    <CFormInput
+                        type="email"
+                        placeholder="Enter your email"
+                        feedbackValid="Looks good!"
+                        id="emailSubmit"
+                        label="Email"
+                        required
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                 </CCol>
                 <CCol md={4}>
                   <CFormLabel htmlFor="validationCustomUsername">Username</CFormLabel>
@@ -87,7 +99,7 @@ const SignUp = () => {
                       type="text"
                       aria-describedby="inputGroupPrependFeedback"
                       feedbackValid="Please choose a username."
-                      id="validationCustomUsername"
+                      id="usernameSubmit"
                       required
                       onChange={(e) => setUsername(e.target.value)}
                     />
@@ -100,7 +112,7 @@ const SignUp = () => {
                             type="password"
                             aria-describedby="inputGroupPrependFeedback"
                             feedbackValid="Please choose a password."
-                            id="validationCustomPassword"
+                            id="CustomPassword"
                             required
                             onChange={(e) => setPassword(e.target.value)}
                         />
@@ -114,17 +126,17 @@ const SignUp = () => {
                     id="validationCustom03"
                     label="City"
                     required
-                    onChange={(e) => setStreet_address(e.target.value)}
+                    onChange={(e) => setStreetAddress(e.target.value)}
                   />
                 </CCol>
                 <CCol md={3}>
                   <CFormSelect
                     aria-describedby="validationCustom04Feedback"
                     feedbackInvalid="Please select a valid state."
-                    id="validationCustom04"
+                    id="stateSubmit"
                     label="State"
                     required
-                    onChange={(e) => setState_address(e.target.value)}
+                    onChange={(e) => setStateAddress(e.target.value)}
                   >
                     <option disabled>Choose...</option>
                       <option>TX</option>
@@ -144,10 +156,10 @@ const SignUp = () => {
                     type="text"
                     aria-describedby="validationCustom05Feedback"
                     feedbackInvalid="Please provide a valid zip."
-                    id="validationCustom05"
+                    id="zipCodeSubmit"
                     label="Zip"
                     required
-                    onChange={(e) => setZip_code(e.target.value)}
+                    onChange={(e) => setZipCode(e.target.value)}
                   />
                 </CCol>
                 <CCol xs={12}>
