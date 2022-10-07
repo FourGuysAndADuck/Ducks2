@@ -5,11 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,15 +26,23 @@ public class Stores {
 
     private String name;
 
-    //TODO: Create products
-    //private List<Products> Inventory;
+    //TODO: Create products, join table?
+    //private List<Products> inventory;
 
-    //Again with the address issue..
+    @Column
+    private String shopStreetAddress;
+
+    @Column
+    private String shopStateAddress;
+
+    @Column
+    private String shopZipCode;
 
     private long phoneNumber;
 
     private Date storeCreatedAt;
-    //TODO: Create Orders;
+
+    //TODO: Create Orders, join table as well?
 //    private List<Orders> storeOrders;
 
 }

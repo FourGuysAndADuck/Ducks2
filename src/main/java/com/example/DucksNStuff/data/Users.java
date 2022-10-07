@@ -34,6 +34,17 @@ public class Users {
     private String email;
 
     //Shipping address class?
+    @Column
+    private String streetAddress;
+
+    @Column
+    private String stateAddress;
+
+    @Column
+    private String zipCode;
+
+    @Column
+    private String password;
 
 
     @Column
