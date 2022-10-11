@@ -1,6 +1,7 @@
 package com.example.DucksNStuff.data;
 
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -50,5 +51,9 @@ public class Users {
     @Column
     private Date userCreatedAt;
 
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    @Column
+    private UserRoles role;
 
 }
