@@ -34,11 +34,16 @@ public class UsersController {
 
     //Add new user
     @CrossOrigin
-    @PostMapping
+    @PostMapping("/signup")
     public ResponseEntity createUser(@RequestBody Users newUser) throws URISyntaxException {
+
+        //TODO:Add encryption for password, Spring Security
+
+        //TODO:Add date/time on creation.
+
         Users createdUser = usersRepository.save(newUser);
         //return 201
-        return ResponseEntity.created(new URI("/clients/" + createdUser.getId())).body(createdUser);
+        return ResponseEntity.created(new URI("/users/" + createdUser.getId())).body(createdUser);
     }
 
     //Delete user account
@@ -68,6 +73,4 @@ public class UsersController {
         //Return 200, ok.
         return ResponseEntity.ok(originalUser);
     }
-
-
 }

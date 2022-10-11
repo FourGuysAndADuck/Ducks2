@@ -1,6 +1,5 @@
 import {CFooter, CLink} from "@coreui/react";
-import {Route, Routes} from "react-router-dom";
-import Home from "./Home";
+import {Link} from "react-router-dom";
 
 const Footer =  () => {
     return(
@@ -12,12 +11,9 @@ const Footer =  () => {
             </div>
             <div>
                 <span>Powered by</span>
-                <CLink to="/home"> 4Guys&aDuck</CLink>
+                <CLink to="/"> 4Guys&aDuck</CLink>
             </div>
         </CFooter>
-        <Routes>
-            <Route path="/home"/>
-        </Routes>
         </>
     );
 }

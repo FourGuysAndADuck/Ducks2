@@ -1,12 +1,8 @@
-import {Link, Route, Routes} from "react-router-dom";
-import Home from "./Home"
-import Contact from "./Contact";
-import Login from "./Login";
-import SignUp from "./SignUp";
-import Help from "./Help";
-import Checkout from "./Checkout";
+import {Link} from "react-router-dom";
 
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -17,7 +13,7 @@ import Cart from "./C2";
 
 const NavbarComponent = () => {
     return (
-        <>
+          <>
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
                     <Navbar.Brand to="/home">DucksNStuff'</Navbar.Brand>
