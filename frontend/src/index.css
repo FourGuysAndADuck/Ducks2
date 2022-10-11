@@ -23,3 +23,23 @@
     border-radius: 8px;
 }
 
+.product-preview {
+    text-decoration: none;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.product-preview a{
+    text-decoration: none;
+
+}
+
+.center-title {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+

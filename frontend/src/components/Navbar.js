@@ -12,6 +12,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import BlogDetails from "./BlogDetails";
+import Cart from "./C2";
 
 const NavbarComponent = () => {
     return (
@@ -25,6 +27,8 @@ const NavbarComponent = () => {
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                             <Nav.Link as={Link} to="/checkout">Checkout<FontAwesomeIcon icon="fa-solid fa-cart-shopping" /></Nav.Link>
+                            <Nav.Link as={Link} to="/C2">Products</Nav.Link>
+
                             <NavDropdown title="Users" id="basic-nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/signUp">Sign Up</NavDropdown.Item>
@@ -43,6 +47,9 @@ const NavbarComponent = () => {
                 <Route path="/signUp" element={<SignUp/>}/>
                 <Route path="/help" element={<Help/>}/>
                 <Route path="/checkout" element={<Checkout/>}/>
+                <Route path="/products/:id" element={<BlogDetails/>}/>
+                <Route path="/c2" element={<Cart/>}/>
+
             </Routes>
         </>
     );
