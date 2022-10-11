@@ -1,14 +1,13 @@
 import {useParams} from "react-router-dom";
 import LoremIpsum from "react-lorem-ipsum";
-import useFetch from "./useFetch";
+import useFetch from "../useFetch";
 
 const BlogDetails = ({array}) => {
     const {id} = useParams()
-    const {data, error, isPending} = useFetch("http://localhost:8000/Products/"+ id)
-
-
+    const {data, error, isPending} = useFetch("http://localhost:8000/Products/"+ id);
 
     const deleteQuote = () => {
+
         fetch("http://localhost:8000/Products/" + data.id, {
             method: "DELETE"
 
@@ -76,9 +75,7 @@ const BlogDetails = ({array}) => {
 
     }
 
-
     return (
-
         <div className="blog-details">
             {isPending && <div>Loading...</div>}
             {error && <div>{error}</div>}
@@ -111,6 +108,7 @@ const BlogDetails = ({array}) => {
                         <div className="div-style"></div>
                         <div className="div-style"></div>
                     </div>
+
                     <button onClick={addToCart} style={{
                         margin: "150px",
                         color: "aqua",
@@ -118,12 +116,9 @@ const BlogDetails = ({array}) => {
                         backgroundColor: "black"
                     }}>Add to Cart</button>
                 </article>
-
-
             )}
 
         </div>
-
     )
 }
 

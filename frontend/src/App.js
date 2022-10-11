@@ -11,13 +11,13 @@ import Checkout from "./components/Checkout";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/C2";
 import NotFound from "./components/NotFound";
+import C2 from "./components/C2";
+import UserPage from "./components/UserPage";
 
 import '@coreui/coreui/dist/css/coreui.min.css'
-import ProductsList from "./components/ProductsList";
-import C2 from "./components/C2";
-
 
 function App() {
+
       return (
           <Router>
               <div className="App">
@@ -28,6 +28,7 @@ function App() {
                           <Route path="/contact" element={<Contact/>}/>
                           <Route path="/login" element={<Login/>}/>
                           <Route path="/signup" element={<SignUp/>}/>
+                          <Route path="/userPage" element={<UserPage/>}/>
                           <Route path="/help" element={<Help/>}/>
                           <Route path="/checkout" element={<Checkout/>}/>
                           <Route path="/products" element={<C2/>}/>
