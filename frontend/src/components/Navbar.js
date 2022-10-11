@@ -10,28 +10,39 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 const NavbarComponent = () => {
     return (
           <>
-            <Navbar bg="dark" variant="dark" expand="lg">
-                <Container>
-                    <Navbar.Brand to="/home">DucksNStuff'</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                            <Nav.Link as={Link} to="/checkout">Checkout</Nav.Link>
-                            <Nav.Link as={Link} to="/C2">Products</Nav.Link>
-
-                            <NavDropdown title="Users" id="basic-nav-dropdown">
-                                <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to="/signUp">Sign Up</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Duck News</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item as={Link} to="/help">Help</NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+              <Navbar bg="dark" variant="dark" expand="lg">
+                  <Container fluid>
+                      <Navbar.Brand to="/">Duck'N'Stuff</Navbar.Brand>
+                      <Navbar.Toggle aria-controls="navbarScroll" />
+                      <Navbar.Collapse id="navbarScroll">
+                          <Nav
+                              className="me-auto my-2 my-lg-0"
+                              style={{ maxHeight: '100px' }}
+                              navbarScroll
+                          >
+                              <Nav.Link as={Link} to="/">Home</Nav.Link>
+                              <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                              <NavDropdown title="Users" id="navbarScrollingDropdown">
+                                  <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
+                                  <NavDropdown.Item as={Link} to="/signup">Sign Up</NavDropdown.Item>
+                                  <NavDropdown.Divider />
+                                  <NavDropdown.Item as={Link} to="/help">Help</NavDropdown.Item>
+                              </NavDropdown>
+                              <Nav.Link as={Link} to="/checkout">Checkout</Nav.Link>
+                              <Nav.Link as={Link} to="/products/:id">Products</Nav.Link>
+                          </Nav>
+                          <Form className="d-flex">
+                              <Form.Control
+                                  type="search"
+                                  placeholder="Search"
+                                  className="me-2"
+                                  aria-label="Search"
+                              />
+                              <Button variant="outline-success">Search</Button>
+                          </Form>
+                      </Navbar.Collapse>
+                  </Container>
+              </Navbar>
         </>
     );
 }

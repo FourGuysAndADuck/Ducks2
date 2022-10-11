@@ -8,7 +8,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Help from "./components/Help";
 import Checkout from "./components/Checkout";
-import BlogDetails from "./components/BlogDetails";
+import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/C2";
 import NotFound from "./components/NotFound";
 
@@ -28,7 +28,7 @@ function App() {
                           <Route path="/signup" element={<SignUp/>}/>
                           <Route path="/help" element={<Help/>}/>
                           <Route path="/checkout" element={<Checkout/>}/>
-                          <Route path="/products/:id" element={<BlogDetails/>}/>
+                          <Route path="/products/:id" element={<ProductDetails/>}/>
                           <Route path="/c2" element={<Cart/>}/>
                           <Route path="*" element={<NotFound/>}/>
                       </Routes>
