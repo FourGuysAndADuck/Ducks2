@@ -22,14 +22,14 @@ const NavbarComponent = () => {
                           >
                               <Nav.Link as={Link} to="/">Home</Nav.Link>
                               <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                              <Nav.Link as={Link} to="/products">Products</Nav.Link>
+                              <Nav.Link as={Link} to="/checkout">Checkout</Nav.Link>
                               <NavDropdown title="Users" id="navbarScrollingDropdown">
                                   <NavDropdown.Item as={Link} to="/login">Login</NavDropdown.Item>
                                   <NavDropdown.Item as={Link} to="/signup">Sign Up</NavDropdown.Item>
                                   <NavDropdown.Divider />
-                                  <NavDropdown.Item as={Link} to="/help">Help</NavDropdown.Item>
+                                  <NavDropdown.Item as={Link} to="/userPage">Profile</NavDropdown.Item>
                               </NavDropdown>
-                              <Nav.Link as={Link} to="/checkout">Checkout</Nav.Link>
-                              <Nav.Link as={Link} to="/products">Products</Nav.Link>
                           </Nav>
                           <Form className="d-flex">
                               <Form.Control

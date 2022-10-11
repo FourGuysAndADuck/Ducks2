@@ -1,24 +1,17 @@
-import Container from "react-bootstrap/Container";
-import {Col, Row} from "reactstrap";
 import {useEffect, useRef, useState} from "react";
 import ProductsList from "./ProductsList";
 
 const Cart = () => {
 
     const [amount, setAmount]  = useState(0)
-
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
-
     const [inputValue, setInputValue] = useState("");
 
     let sum = 0
     const [Products, setProduct] = useState(null);
     useEffect(() => {
         const abortCont = new AbortController();
-
-
-
 
         fetch("http://localhost:8000/Products",{signal: abortCont.signal})
             .then(response => {
@@ -51,41 +44,23 @@ const Cart = () => {
 
 
         return () => abortCont.abort();
-        console.log("use effect ran")
     }, []);//only renders for these dependencies
-    {Products &&<ProductsList Products={Products} title="All products" />
+
+
+    {Products && <ProductsList Products={Products} title="All products" />}
         // for (let i = 0; i < Products.length; i++) {
         //     console.log(Products[i].Price)
         //     sum += Products[i].Price
         //     console.log(sum)
         // }
 
-    }
-
 // console.log(Products)
 
-
-
     return(
-
-        <Container id="container">
-            <Row id="row1">
-                <Col className="box">
-                    <div>
-                        Shopping list:
-                    </div>
-                </Col>
-                {Products &&<ProductsList Products={Products} title="Products" price={Products[0].Price} />}
-
-
-
-
-
-
-
-            </Row>
-        </Container>
+        <div id="container">
+            {Products && <ProductsList Products={Products} title="Products" price={Products[0].Price} />}
+        </div>
     );
 }
 
-export default Cart
+export default Cart;

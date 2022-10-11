@@ -51,7 +51,7 @@ const SignUp = () => {
     }
 
     return(
-        <div className="container">
+        <div className="container" id="register">
             <CForm
                 className="row g-3 needs-validation"
                 noValidate
