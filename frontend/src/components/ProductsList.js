@@ -7,9 +7,6 @@ function ProductsList ({Products, title, price}) {
         let z = Products[i].Price
         console.log(z)
         x += z
-
-
-
     }
 
 
