@@ -1,0 +1,52 @@
+{
+  "Products": [
+    {
+      "Name": "denim jacket",
+      "Quantity": 2,
+      "Price": 20,
+      "Category": "Clothing",
+      "id": 1,
+      "Pic": "🧥\t"
+    },
+    {
+      "Name": "joggers",
+      "Quantity": 1,
+      "Price": 10,
+      "Category": "Clothing",
+      "id": 2,
+      "Pic": "🧥\t"
+    },
+    {
+      "Name": "laptop",
+      "Quantity": 1,
+      "Price": 500,
+      "Category": "Electronics",
+      "id": 3,
+      "Pic": "🧥\t"
+    },
+    {
+      "Name": "Iphone 10",
+      "Quantity": 1,
+      "Price": 1000,
+      "Category": "Electronics",
+      "id": 4,
+      "Pic": "🧥\t"
+    },
+    {
+      "Name": "Tent",
+      "Quantity": 2,
+      "Price": 10,
+      "Category": "Outdoors",
+      "id": 5,
+      "Pic": "🧥\t"
+    },
+    {
+      "Name": "Fishing rod",
+      "Quantity": 5,
+      "Price": 70,
+      "Category": "Outdoors",
+      "id": 6,
+      "Pic": "🧥\t"
+    }
+  ]
+}

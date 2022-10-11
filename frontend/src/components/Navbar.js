@@ -29,7 +29,7 @@ const NavbarComponent = () => {
                                   <NavDropdown.Item as={Link} to="/help">Help</NavDropdown.Item>
                               </NavDropdown>
                               <Nav.Link as={Link} to="/checkout">Checkout</Nav.Link>
-                              <Nav.Link as={Link} to="/products/:id">Products</Nav.Link>
+                              <Nav.Link as={Link} to="/products">Products</Nav.Link>
                           </Nav>
                           <Form className="d-flex">
                               <Form.Control
