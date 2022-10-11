@@ -4,7 +4,7 @@ import { LoremIpsum } from 'react-lorem-ipsum';
 
 
 
-const BlogDetails = ({array}) => {
+const ProductDetails = ({array}) => {
     const {id} = useParams()
     const {data, error, isPending} = useFetch("http://localhost:8000/Products/"+ id)
 
@@ -129,4 +129,4 @@ const BlogDetails = ({array}) => {
     )
 }
 
-export default BlogDetails
+export default ProductDetails
