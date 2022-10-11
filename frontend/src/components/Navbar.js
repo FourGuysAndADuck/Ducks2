@@ -16,7 +16,7 @@ const NavbarComponent = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                            <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                             <Nav.Link as={Link} to="/checkout">Checkout</Nav.Link>
                             <Nav.Link as={Link} to="/C2">Products</Nav.Link>
