@@ -1,10 +1,8 @@
 import {useParams} from "react-router-dom";
+import LoremIpsum from "react-lorem-ipsum";
 import useFetch from "./useFetch";
-import { LoremIpsum } from 'react-lorem-ipsum';
 
-
-
-const ProductDetails = ({array}) => {
+const BlogDetails = ({array}) => {
     const {id} = useParams()
     const {data, error, isPending} = useFetch("http://localhost:8000/Products/"+ id)
 
@@ -20,7 +18,7 @@ const ProductDetails = ({array}) => {
         })
 
     }
-        let cart = [];
+    let cart = [];
 
     const addToCart = (event) => {
         event.preventDefault()
@@ -55,15 +53,15 @@ const ProductDetails = ({array}) => {
 
 
 
-               // m -= 1
+                // m -= 1
                 cart.push(data)
                 console.log(cart)
             } else if (data.Quantity <= 0) {
                 alert("Out of stock")
             }
-           // cart.push(data)
-           //  console.log(cart)
-           //  console.log(data.Quantity)
+            // cart.push(data)
+            //  console.log(cart)
+            //  console.log(data.Quantity)
 
             for (let i = 0; i < cart.length; i++) {
                 sum+= cart[i].Price
@@ -129,4 +127,4 @@ const ProductDetails = ({array}) => {
     )
 }
 
-export default ProductDetails
+export default BlogDetails
