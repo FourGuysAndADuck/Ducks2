@@ -57,7 +57,7 @@ const Cart = () => {
 // console.log(Products)
 
     return(
-        <div id="container">
+        <div id="container" >
             {Products && <ProductsList Products={Products} title="Products" price={Products[0].Price} />}
         </div>
     );

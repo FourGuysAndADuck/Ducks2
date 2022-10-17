@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-
+import './App.css';
 import NavbarComponent from "./components/Navbar"
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -9,18 +9,30 @@ import SignUp from "./components/SignUp";
 import Help from "./components/Help";
 import Checkout from "./components/Checkout";
 import ProductDetails from "./components/ProductDetails";
-import Cart from "./components/C2";
 import NotFound from "./components/NotFound";
 import C2 from "./components/C2";
 import UserPage from "./components/UserPage";
-
 import '@coreui/coreui/dist/css/coreui.min.css'
+import NewItems from './products/NewItems';
+import Cart from './cart/Cart';
+import Header from './header/Header';
+import {useThemeHook} from './Theme/Theme';
+
 
 function App() {
 
+    const [theme] = useThemeHook();
+
+
       return (
+
+
+          <main className={theme? 'bg-black': 'bg-light-2'} style={{ height: '100vh', overflowY: 'auto'}}>
+
           <Router>
+
               <div className="App">
+                  <Header/>
                   <NavbarComponent/>
                   <div className="content">
                       <Routes>
@@ -35,11 +47,14 @@ function App() {
                           <Route path="/products/:id" element={<ProductDetails/>}/>
                           <Route path="/c2" element={<Cart/>}/>
                           <Route path="*" element={<NotFound/>}/>
+                          <Route path="/newitems" element={<NewItems/>}/>
+                          <Route path="/cart" element={<Cart/>}/>
                       </Routes>
                   </div>
                   <Footer/>
               </div>
           </Router>
+          </main>
       );
 }
 

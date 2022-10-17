@@ -1,7 +1,13 @@
 import Container from "react-bootstrap/Container";
 import {Col, Row} from "reactstrap";
+import '../App.css';
 
 const Checkout = () => {
+
+    // const {data, isPending, error} = useFetch("http://localhost:8001/Checkout")
+    // const productsUrl ="http://localhost:8001/Checkout";
+
+
     return(
         <Container id="container">
             <Row id="row1">

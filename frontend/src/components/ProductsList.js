@@ -1,12 +1,33 @@
 import {Link} from "react-router-dom";
+import {useCart} from "react-use-cart";
+import useFetch from "../useFetch";
 
 function ProductsList ({Products, title, price}) {
-    let x = 0
+
+
+    const {addItem } = useCart();
+    const {data, isPending, error} = useFetch("http://localhost:8000/Products")
+    console.log(Products)
     for (let i = 0; i < Products.length; i++) {
-        let z = Products[i].Price
-        console.log(z)
-        x += z
+        let m = Products[i]
+
+
     }
+
+    let products = [
+        {
+            name:"jacket",
+            price:20,
+            id:1,
+            Quantity:3
+        },
+        {
+            name:"shirt",
+            price:5,
+            id:2,
+            Quantity: 2
+        }
+    ]
 
     return (
 
@@ -17,13 +38,18 @@ function ProductsList ({Products, title, price}) {
                     <Link to={`/products/${product.id}`}>
                     <p className="pic"><img src="/logo512.png"  style={{width:"100px"}}/></p>
                     <h2>{product.Name}</h2>
-                    <p>Product Price: ${product.Price}</p>
+                    <p>Product Price: ${product.price}</p>
                     </Link>
                 </div>
             ))}
         </div>
 
-    )
+
+
+
+
+
+)
 }
 
 export default ProductsList

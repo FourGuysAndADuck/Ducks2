@@ -1,8 +1,15 @@
-import {useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import LoremIpsum from "react-lorem-ipsum";
 import useFetch from "../useFetch";
+import {useState} from "react";
 
-const BlogDetails = ({array}) => {
+const ProductDetails = (props) => {
+
+
+
+
+
+    const [total, setTotal] = useState(0)
     const {id} = useParams()
     const {data, error, isPending} = useFetch("http://localhost:8000/Products/"+ id);
 
@@ -49,6 +56,26 @@ const BlogDetails = ({array}) => {
                     // m -= 1
                     console.log("removed")
                 })
+                //
+                //
+                // const productsUrl ="http://localhost:8001/Checkout";
+                // axios.post(productsUrl,{
+                //     cart:{
+                //         name: data.Name,
+                //         price: data.Price
+                //     }
+                //
+                //
+                // })
+                //     .then((response => {
+                //         console.log(response.data)
+                //         // console.log(response.data[0].Name)
+                //         // shows first product name
+                //         // axios retrieves data automatically
+                //
+                //     })) .catch((error => {
+                //     console.log(error)
+                // }))
 
 
 
@@ -72,7 +99,6 @@ const BlogDetails = ({array}) => {
 
         })
 
-
     }
 
     return (
@@ -80,14 +106,12 @@ const BlogDetails = ({array}) => {
             {isPending && <div>Loading...</div>}
             {error && <div>{error}</div>}
             {data && (
-                <article>{array}
+                <article>
                     <div className="div-container">
                         <div className="div-style"><img src="/logo512.png" style={{
                             float:"left",
                             padding: "20px"
                         }}/></div>
-                        <div className="div-style"></div>
-                        <div className="div-style"></div>
                         <div className="div-style" style={{
                             margin: "20px",
                             padding: "20px",
@@ -98,15 +122,9 @@ const BlogDetails = ({array}) => {
                         }}>{data.Name}</div>
                         <div className="div-style">${data.Price}</div>
                         <div className="div-style">{data.poster}</div>
-                        <div className="div-style"></div>
                         <div className="div-style" style={{
                             clear:"right"
                         }}><LoremIpsum/></div>
-                        <div className="div-style"></div>
-                        <div className="div-style"></div>
-                        <div className="div-style"></div>
-                        <div className="div-style"></div>
-                        <div className="div-style"></div>
                     </div>
 
                     <button onClick={addToCart} style={{
@@ -122,4 +140,4 @@ const BlogDetails = ({array}) => {
     )
 }
 
-export default BlogDetails
+export default ProductDetails
