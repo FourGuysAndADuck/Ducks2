@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Button, Card} from 'react-bootstrap';
 import { useThemeHook } from '../Theme/Theme';
 import { useCart } from 'react-use-cart';
 import { BsCartPlus } from 'react-icons/bs';
+import {Link} from 'react-router-dom';
 
 const ProductCard = (props) => {
     let { image, price, Name} = props.data;
@@ -17,7 +18,11 @@ const ProductCard = (props) => {
         <Card
             style={{
                 width: '18rem',
-                height: 'auto'
+                height: 'auto',
+                borderRadius: "50px",
+                background: "#e0e0e0"
+                // box-shadow:  32px 32px 65px #bebebe,
+                // -32px -32px 65px #ffffff;
             }}
             className={`${theme? 'bg-light-black text-light':'bg-lihgt text-black'} text-center p-0 overflow-hidden shadow mx-auto mb-4`}
         >
@@ -29,7 +34,12 @@ const ProductCard = (props) => {
             </div>
             <Card.Body>
                 <Card.Title style={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap'}}>
-                    {Name}
+                   <Link style={{
+
+                       textDecoration: "none"
+                   }} to={`/newitems/${props.data.id}`}>
+                       {Name}
+                   </Link>
                 </Card.Title>
                 <Card.Title>
                     $ <span className="h3">{price}</span>

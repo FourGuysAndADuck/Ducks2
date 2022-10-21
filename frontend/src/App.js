@@ -17,6 +17,10 @@ import NewItems from './products/NewItems';
 import Cart from './cart/Cart';
 import Header from './header/Header';
 import {useThemeHook} from './Theme/Theme';
+import NewItemsDetails from './products/NewItemsDetails';
+import PaymentForm from './stripe/PaymentForm';
+import StripeChexkout from './stripe/StripeChexkout';
+
 
 
 function App() {
@@ -42,13 +46,14 @@ function App() {
                           <Route path="/signup" element={<SignUp/>}/>
                           <Route path="/userPage" element={<UserPage/>}/>
                           <Route path="/help" element={<Help/>}/>
-                          <Route path="/checkout" element={<Checkout/>}/>
-                          <Route path="/products" element={<C2/>}/>
-                          <Route path="/products/:id" element={<ProductDetails/>}/>
+                          {/* <Route path="/checkout" element={<Checkout/>}/> */}
+                          {/* <Route path="/products" element={<C2/>}/> */}
+                          {/* <Route path="/products/:id" element={<ProductDetails/>}/> */}
                           <Route path="/c2" element={<Cart/>}/>
                           <Route path="*" element={<NotFound/>}/>
                           <Route path="/newitems" element={<NewItems/>}/>
                           <Route path="/cart" element={<Cart/>}/>
+                          <Route path="/newitems/:id" element={<NewItemsDetails/>}/>
                       </Routes>
                   </div>
                   <Footer/>

@@ -1,0 +1,43 @@
+/* Pen-specific styles */
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    color: blue;
+    font-family: sans-serif;
+    font-size: 1.25rem;
+
+    text-align: center;
+    text-shadow: 0 2px 2px #b6701e;
+}
+
+
+
+
+
+
+
+/* Pattern styles */
+.left-half {
+
+    float: left;
+    width: 50%;
+}
+.right-half {
+
+    float: left;
+    width: 50%;
+}
+
+
+
+circle,
+rect,
+line {
+    stroke-width: 10px;
+    stroke-linecap: round;
+    fill: transparent;
+
+}

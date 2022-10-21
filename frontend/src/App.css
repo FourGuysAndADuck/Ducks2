@@ -26,8 +26,27 @@
   background-color: #dadcde;
 }
 .bg-light-primary{
-  background-color: #e89800 !important;
+  background-color: rgba(0, 116, 232, 0.68) !important;
 }
 .text-light-primary{
   color: #191659 !important;
+}
+
+.StripeElement {
+  /*margin: 15px auto;*/
+  padding: 10px 12px;
+  color: #32325d;
+  background-color: #040a2d;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
 }

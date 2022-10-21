@@ -1,0 +1,2 @@
+const STRIPE_KEY = "pk_test_51LuzwcImlxY3bwEUb1ybfDBbgMzCtYDIwfDs2rLfAG6Wantubin6tnKs4Dt0hmRQpSDqMYkFEzyjVMQAYwUaynTn00rFNDZzPK"
+export default STRIPE_KEY

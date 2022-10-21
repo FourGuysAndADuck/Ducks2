@@ -24,7 +24,7 @@ const Header = () => {
         <Navbar collapseOnSelect expand="md"
                 variant={darkMode? 'dark':'light'}
                 className={darkMode? 'bg-light-black border-bottom': 'bg-light border-bottom'}
-                style={{ width: '100%', position: 'fixed', zIndex: 100}}
+                style={{ position: 'fixed', zIndex: 100}}
         >
             {/* <Container> */}
             {/*     <Link to="/"> */}

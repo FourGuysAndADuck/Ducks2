@@ -32,17 +32,18 @@ public class StripePaymentController {
                                 .build()
                 )
 
+//                .setConfirm(true)
                 .setCurrency("USD")
                 .setAmount(9999L)
+//                .setReturnUrl("http://localhost:3000/newitems")
                 .build();
         try {
             // Create a PaymentIntent with the order amount and currency
             PaymentIntent intent = PaymentIntent.create(params);
 
             // Send PaymentIntent details to client
-//            return gson.toJson(new StripePaymentResponse(intent.getClientSecret()));
-            return "PAYMENT SUCCESSFUL";
-
+            return gson.toJson(new StripePaymentResponse(intent.getClientSecret()));
+//            return "PAYMENT SUCCESSFUL";
 
         } catch(StripeException e) {
             System.out.println(e.getMessage());

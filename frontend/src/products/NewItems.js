@@ -23,6 +23,10 @@ const NewItems = () =>  {
 
     return (
         <Container className="py-4">
+            <button>o</button>
+            <button>e</button>
+            <button>c</button>
+
             <Row className="justify-content-center">
                 <Col xs={10} md={7} lg={6} xl={4} className="mb-3 mx-auto text-center">
                     <h1 className={theme? 'text-light my-5': 'text-black my-5'}>Search Merch</h1>

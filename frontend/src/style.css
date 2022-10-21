@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: #222222;
+}
+
+circle,
+rect,
+line {
+    stroke-width: 10px;
+    stroke-linecap: round;
+    fill: transparent;
+}

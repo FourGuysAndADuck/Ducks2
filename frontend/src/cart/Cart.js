@@ -3,8 +3,14 @@ import { Button, Container, Col, Row, Table} from 'react-bootstrap';
 import { useCart } from 'react-use-cart';
 import { useThemeHook } from '../Theme/Theme';
 import { BsCartCheck, BsCartX} from 'react-icons/bs';
+import StripeContainer from '../stripe/StripeContainer';
+import StripeChexkout from '../stripe/StripeChexkout';
 
 const Cart = () => {
+    function meep() {
+        window.open("http://localhost:3001/examples/card", "_self")
+        emptyCart()
+    }
 
     const [theme] = useThemeHook();
     const {
@@ -18,7 +24,7 @@ const Cart = () => {
     return (
         <Container className="py-4 mt-5">
             <h1 className={`${theme? 'text-light': 'text-light-primary'} my-5 text-center`}>
-                {isEmpty? 'Your Cart is Empty' : 'The Cart'}
+                {isEmpty? 'Your Cart is Empty' : 'Current Items'}
             </h1>
             <Row className="justify-content-center">
                 <Table responsive="sm" striped bordered hover variant={theme? 'dark': 'light'} className="mb-5">
@@ -53,10 +59,12 @@ const Cart = () => {
                 </Table>
                 {!isEmpty &&
                     <Row
-                        style={{ position: 'fixed', bottom: 0}}
+                        style={{ position: 'fixed', bottom: 50}}
                         className={`${theme? 'bg-light-black text-light' : 'bg-light text-balck'} justify-content-center w-100`}
                     >
-                        <Col className="py-2">
+                        <StripeContainer/>
+                        {/* <StripeChexkout/> */}
+                        <Col className={`${theme? 'bg-light-black text-light' : 'bg-light text-balck'}`}>
                             <h4>Total Price: $ {cartTotal}</h4>
                         </Col>
                         <Col className="p-0" md={4}>
@@ -67,12 +75,14 @@ const Cart = () => {
                                 <BsCartX size="1.7rem" />
                                 Clear Cart
                             </Button>
-                            <Button variant="success"
-                                    className="m-2"
-                            >
-                                <BsCartCheck size="1.7rem" />
-                                Pay
-                            </Button>
+
+                            {/* <Button variant="success" */}
+                            {/*         className="m-2" */}
+                            {/* onClick={meep}> */}
+                            {/*     <BsCartCheck size="1.7rem" /> */}
+                            {/*     Pay */}
+                            {/* </Button> */}
+                            {/* <StripeContainer/> */}
                         </Col>
                     </Row>}
             </Row>
