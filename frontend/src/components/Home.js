@@ -4,6 +4,10 @@ import {useEffect, useState} from 'react';
 import Banner from '../cart/Banner';
 import Loader from '../cart/Loader';
 import {AnimatePresence, AnimateSharedLayout, motion} from 'framer-motion';
+import LoremIpsum from 'react-lorem-ipsum';
+import "../home.css"
+import {Link} from 'react-router-dom';
+import {motionValue} from 'framer-motion';
 
 
 const Home = () =>  {
@@ -27,29 +31,43 @@ const Home = () =>  {
 
     return(
         <div  className={theme? 'bg-black text-dark-primary': 'bg-light text-light-primary'} >
-            <AnimateSharedLayout type='crossfade'>
-                <AnimatePresence>
-                    {loading ? (
-                        <motion.div key='loader'>
-                            <Loader setLoading={setLoading} />
-                        </motion.div>
-                    ) : (
-                        <>
-                            {/* <H2 /> */}
-                            <Banner />
-                            {!loading && (
-                                <div className='transition-image final'>
-                                    <motion.img
-                                        transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
-                                        src="../logo192.png"
-                                        layoutId='main-image-1'
-                                    />
-                                </div>
-                            )}
-                        </>
-                    )}
-                </AnimatePresence>
-            </AnimateSharedLayout>
+
+
+    <main>
+        <section className="image-part main-grid">
+            <h1 className="title">Shopping made easy at a push of a button. <span class="bold">Duck'N'Stuff more stuff for your buck</span> that fit your budget.</h1>
+            <p className="intro">Saving money for things that really matter.</p>
+           <Link to="/contact">
+            <motion.button
+                whileHover={{
+                    scale: 1.1,
+                    textShadow:  "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    borderRadius: "20%"
+                }}
+
+            >Contact Us</motion.button>
+           </Link>
+        </section>
+
+        <section className="info main-grid">
+            <div className="about part1">
+                <h2 className="headlines">About Us</h2>
+                <p className="pstyle">We understand how big money is in this economy and add inflation thing can get expensive. So why spend more if you don't have to? Thus Duck'N'Stuff came into fruition. We plan to be the go to for all your needs instead of having to shop for the best prices, we took care of that for you with our competitive prices.<span className="black">awesome work.</span></p>
+            </div>
+            <div className="skills part1">
+                <h2>Our Promise</h2>
+                <p className="pstyle">We research prices so you don't have to do the heavy lifting and if you find one of our items lower somewhere else, we'll beat it and add a 5% discount to your order.</p>
+            </div>
+            <div className="touch part1">
+                <h2>Get In Touch</h2>
+                <p className="pstyle">Send us an email with products you want added and we will get back to you <span className="black">immediately.</span></p>
+            </div>
+
+        </section>
+    </main>
+
+
         </div>
     );
 }

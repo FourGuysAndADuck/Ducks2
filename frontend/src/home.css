@@ -10,7 +10,7 @@ body {
     font-size: 1.25rem;
 
     text-align: center;
-    text-shadow: 0 2px 2px #b6701e;
+    /*text-shadow: 0 2px 2px #b6701e;*/
 }
 
 
@@ -33,11 +33,277 @@ body {
 
 
 
-circle,
-rect,
-line {
-    stroke-width: 10px;
-    stroke-linecap: round;
-    fill: transparent;
+
+* {box-sizing: border-box;}
+
+body {
+    margin: 0;
+  font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+
+    color: #fff;
+}
+
+/*====== typography ======*/
+
+h1 {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-weight: 700;
+    color: #000;
+    font-size: 1.75rem;
+}
+
+.intro {
+    font-size: 1.15rem;
+    margin-bottom: 2.5em;
+    color: white;
+}
+
+span {
+    color: #fda039;
+}
+
+.black {
+    font-weight: 700;
+    color: #000;
+}
+
+/*==== main-grid Layout ====*/
+
+.main-grid {
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) minmax(0px, 500px) minmax(1em, 1fr);
+    grid-column-gap: 2em;
+}
+
+/* ==== Layout ====*/
+
+.header {
+    background: #000;
+}
+
+.header-content{
+    display: flex;
+    flex-direction: row;
+    grid-column: 2 / -2;
+}
+
+.logo {
+    background: #fda039;
+    color: #000;
+    font-weight: 700;
+    padding: 1em .5em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+
+
+
+
+
+
+.current {
+    border-bottom: 1px solid #fda039;
+}
+
+.image-part {
+    background-image: url(https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1312231371/image_1312231371.jpg?io=getty-c-w750);
+    grid-column: 1 / 3;
+    padding: 3em 0;
+    background-size: 30%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-color: #000;
+    color: #fff;
+    padding-left: .5em;
 
 }
+
+.image-part > * {
+    grid-column: 2 / -2;
+}
+
+.btn {
+    text-decoration: none;
+   color: white;
+    justify-self: start;
+    padding: .5em;
+    border-radius: 5px;
+    background-color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: white;
+}
+
+.info {
+    color: #000;
+    margin-top: 2em;
+}
+
+.info > * {
+    grid-column: 2 / -2;
+    text-align: center;
+}
+
+.info {
+    background-color: #fff;
+    padding-bottom: 4em;
+}
+
+.part1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pstyle {
+    margin-top: 0;
+}
+
+.about {
+    margin-top: 5em;
+}
+
+.footer > * {
+    grid-column: 2 / -2;
+}
+
+.footer {
+    background: #ebebeb;
+    color: #000;
+}
+
+.social {
+    order: -1;
+    font-size: 1.75rem;
+    padding-top: 3em;
+    padding-bottom: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.icon {
+    color: #000;
+}
+.icon:hover,
+.icon:focus {
+
+    color: #fda039;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.end {
+    text-align: center;
+    margin-bottom: 0;
+}
+.copyright {
+    font-size: 1.1rem;
+    padding-top: 1em;
+    text-align: center;
+    font-weight: 700;
+}
+
+.footer-text,
+.copyright {
+    opacity: .4;
+}
+
+
+@media (min-width: 600px) {
+    .main-grid {
+        grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(20px, 320px)) minmax(1em, 1fr);
+    }
+
+    .open-nav,
+    .close-nav {
+        display: none;
+    }
+
+    .navigation {
+        position: initial;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .nav-link {
+        margin-left: 1em;
+        font-size: 1.7rem;
+    }
+
+    .logo {
+        padding: .5em 1em;
+        text-align: center;
+    }
+
+    .image-part > * {
+        grid-column: 2 / span 2;
+    }
+
+    .image-part {
+        padding: 4em 0;
+        background-size: 40%;
+        background-position: right;
+    }
+
+    .info {
+        padding: 4em 0;
+    }
+
+    .part1 {
+        grid-column: span 1;
+    }
+
+    .part1:first-child {
+        grid-column: 2 / span 1;
+    }
+
+    .about {
+        margin-top: 0;
+    }
+    .footer {
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    .footer-text {
+        grid-column: 2 / span 2;
+    }
+
+    .social {
+        grid-column: span1;
+    }
+
+    .icon {
+        margin: .5em;
+    }
+
+    .footer-text {
+        width: 50vw;
+        margin-left: 0;
+        order: -1;
+    }
+
+    .end,
+    .copyright {
+        text-align: start;
+    }
+}
+

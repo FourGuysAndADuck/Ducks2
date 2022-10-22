@@ -49,7 +49,7 @@ function App() {
                           {/* <Route path="/checkout" element={<Checkout/>}/> */}
                           {/* <Route path="/products" element={<C2/>}/> */}
                           {/* <Route path="/products/:id" element={<ProductDetails/>}/> */}
-                          <Route path="/c2" element={<Cart/>}/>
+                          {/* <Route path="/c2" element={<Cart/>}/> */}
                           <Route path="*" element={<NotFound/>}/>
                           <Route path="/newitems" element={<NewItems/>}/>
                           <Route path="/cart" element={<Cart/>}/>
