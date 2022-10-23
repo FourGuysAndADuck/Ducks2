@@ -1,11 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { Container, Row, Col, InputGroup, FormControl } from 'react-bootstrap';
 import { useThemeHook } from '../Theme/Theme';
 import { BiSearch } from 'react-icons/bi';
 import SearchFilter from 'react-filter-search';
 import ProductCard from '../products/ProductCard';
+import {motion} from 'framer-motion';
+import images from '../PexelImage';
 
 const NewItems = () =>  {
+
+
+    const [width, setWidth] = useState(0);
+    const carousel = useRef();
+    useEffect(() => {
+        console.log(carousel.current.scrollWidth, carousel.current.offsetWidth)
+        setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+
+    },[])
 
     const [theme] = useThemeHook();
     const [searchInput, setSearchInput] = useState('');
@@ -23,10 +34,30 @@ const NewItems = () =>  {
 
     return (
         <Container className="py-4">
-            <button>o</button>
-            <button>e</button>
-            <button>c</button>
+            <motion.div ref={carousel} className="carousel" >
 
+                <motion.div  drag="x"  dragConstraints={{
+                    right: 1500,
+                    left: -1500
+
+
+                }} className="inner-carousel">
+
+                    {images.map(image => {
+                        return(
+
+                            <motion.div className="item" key={image}>
+
+                                <img src={image} alt=""/>
+
+                            </motion.div>
+                        )
+                    })}
+
+                </motion.div>
+
+
+            </motion.div>
             <Row className="justify-content-center">
                 <Col xs={10} md={7} lg={6} xl={4} className="mb-3 mx-auto text-center">
                     <h1 className={theme? 'text-light my-5': 'text-black my-5'}>Search Merch</h1>
