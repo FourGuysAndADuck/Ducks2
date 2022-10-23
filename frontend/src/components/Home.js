@@ -1,10 +1,7 @@
 import useFetch from "../useFetch";
 import {useThemeHook} from '../Theme/Theme';
 import {useEffect, useState} from 'react';
-import Banner from '../cart/Banner';
-import Loader from '../cart/Loader';
 import {AnimatePresence, AnimateSharedLayout, motion} from 'framer-motion';
-import LoremIpsum from 'react-lorem-ipsum';
 import "../home.css"
 import {Link} from 'react-router-dom';
 import {motionValue} from 'framer-motion';
@@ -35,7 +32,7 @@ const Home = () =>  {
 
     <main>
         <section className="image-part main-grid">
-            <h1 className="title">Shopping made easy at a push of a button. <span class="bold">Duck'N'Stuff more stuff for your buck</span> that fit your budget.</h1>
+            <h1 className="title">Shopping made easy at a push of a button. <span className="bold">Duck'N'Stuff more stuff for your buck</span> that fit your budget.</h1>
             <p className="intro">Saving money for things that really matter.</p>
            <Link to="/contact">
             <motion.button
