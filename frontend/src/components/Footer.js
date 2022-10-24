@@ -7,7 +7,7 @@ const Footer =  () => {
         <>
         <CFooter>
             <div className="footer">
-                <CLink to="https://www.google.com">Google</CLink>
+                <CLink to="https://www.google.com"></CLink>
                 <span>&copy; 2022 DuckyProductions</span>
             </div>
             <div>

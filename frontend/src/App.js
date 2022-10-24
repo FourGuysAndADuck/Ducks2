@@ -20,6 +20,7 @@ import {useThemeHook} from './Theme/Theme';
 import NewItemsDetails from './products/NewItemsDetails';
 import PaymentForm from './stripe/PaymentForm';
 import StripeChexkout from './stripe/StripeChexkout';
+import Carousel from './Carousel';
 
 
 

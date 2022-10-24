@@ -19,7 +19,6 @@ const Contact = () => {
                             <button id="cust-care" style={{
                                 color: "white"
                             }}> Submit a Request</button>
-                            <a href="#"> Frequently asked Questions</a>
                         </div>
                         <div className="write-us">
                             <h3>Write Us</h3>

@@ -50,3 +50,30 @@
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
 }
+
+.item {
+
+  min-height: 10rem;
+  min-width: 20rem;
+  padding: 40px;
+  object-fit: cover;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  pointer-events: none;
+}
+
+.inner-carousel {
+  display: flex;
+  /*background-color: #0ad5bb;*/
+}
+
+.carousel {
+  cursor: grab;
+  overflow: hidden;
+  /*background-color: #4d1091;*/
+
+}

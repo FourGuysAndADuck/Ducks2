@@ -34,7 +34,7 @@ const NewItems = () =>  {
 
     return (
         <Container className="py-4">
-            <motion.div ref={carousel} className="carousel" >
+            <motion.div ref={carousel} className="carousel" whileTap={{cursor:"grabbing"}} >
 
                 <motion.div  drag="x"  dragConstraints={{
                     right: 1500,

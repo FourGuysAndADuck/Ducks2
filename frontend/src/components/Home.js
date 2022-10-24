@@ -32,7 +32,7 @@ const Home = () =>  {
 
     <main>
         <section className="image-part main-grid">
-            <h1 className="title">Shopping made easy at a push of a button. <span className="bold">Duck'N'Stuff more stuff for your buck</span> that fit your budget.</h1>
+            <h1 className="title">Shopping made easy at a push of a button. <span className="bold">Duck'N'Stuff more stuff for your buck</span> that fits your budget.</h1>
             <p className="intro">Saving money for things that really matter.</p>
            <Link to="/contact">
             <motion.button
@@ -58,7 +58,7 @@ const Home = () =>  {
             </div>
             <div className="touch part1">
                 <h2>Get In Touch</h2>
-                <p className="pstyle">Send us an email with products you want added and we will get back to you <span className="black">immediately.</span></p>
+                <p className="pstyle">Send us an email with any concern and we will get back to you <span className="black">immediately.</span></p>
             </div>
 
         </section>
