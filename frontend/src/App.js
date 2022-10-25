@@ -7,10 +7,9 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Help from "./components/Help";
-import Checkout from "./components/Checkout";
-import ProductDetails from "./components/ProductDetails";
+
 import NotFound from "./components/NotFound";
-import C2 from "./components/C2";
+
 import UserPage from "./components/UserPage";
 import '@coreui/coreui/dist/css/coreui.min.css'
 import NewItems from './products/NewItems';
@@ -18,9 +17,8 @@ import Cart from './cart/Cart';
 import Header from './header/Header';
 import {useThemeHook} from './Theme/Theme';
 import NewItemsDetails from './products/NewItemsDetails';
-import PaymentForm from './stripe/PaymentForm';
-import StripeChexkout from './stripe/StripeChexkout';
-import Carousel from './Carousel';
+
+
 
 
 
