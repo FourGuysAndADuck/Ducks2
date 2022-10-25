@@ -33,10 +33,13 @@ const NewItemsDetails = () => {
 
 
                         }}>{data.Name}</div>
-                        <div className="div-style">${data.price}</div>
+                        <div className="div-style" style={{
+                            fontWeight: "bold"
+                        }}>${data.price}</div>
                         {/* <div className="div-style"><img src={data.image}/></div> */}
                         <div className="div-style" style={{
-                            clear:"right"
+                            clear:"right",
+                            fontWeight: "bold"
                         }}><LoremIpsum /></div>
                     </div>
 

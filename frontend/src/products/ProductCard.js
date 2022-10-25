@@ -36,7 +36,8 @@ const ProductCard = (props) => {
                 <Card.Title style={{ textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap'}}>
                    <Link style={{
 
-                       textDecoration: "none"
+                       textDecoration: "none",
+                       color: "red"
                    }} to={`/newitems/${props.data.id}`}>
                        {Name}
                    </Link>

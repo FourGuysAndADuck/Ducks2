@@ -38,8 +38,8 @@ h2{
 }
 .customer-care{
     height: 250px;
-    box-shadow: 0 15px 15px #49ecd8;
-    border: 1px solid #33a9b4;
+    box-shadow: 0 15px 15px #640325;
+    border: 1px solid #57030c;
 }
 .write-us{
     height: 250px;
@@ -56,7 +56,7 @@ p{
 }
 
 #cust-care{
-    background: #038a70;
+    background: #8a0303;
 
     box-shadow: 0 0 5px black;
 }

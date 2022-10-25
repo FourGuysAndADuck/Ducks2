@@ -39,7 +39,11 @@ const NavbarComponent = () => {
                   <Container fluid>
 
 
-                      <Navbar.Brand to="/">Duck'N'Stuff</Navbar.Brand>
+                      <Navbar.Brand as={Link} to="/">Duck'N'Stuff</Navbar.Brand>
+                      <img src="/images%20(2).jpeg" style={{
+                          width: "2.5%",
+                          borderRadius:"50%"
+                      }}/>
 
                       <Navbar.Toggle aria-controls="navbarScroll" />
                       <Navbar.Collapse id="navbarScroll">
@@ -48,7 +52,7 @@ const NavbarComponent = () => {
                               style={{ maxHeight: '100px' }}
                               navbarScroll
                           >
-                              <Nav.Link as={Link} to="/">Home</Nav.Link>
+                              {/* <Nav.Link as={Link} to="/">Home</Nav.Link> */}
                               <Nav.Link as={Link} to="/newitems">Products</Nav.Link>
                               <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
                               <Nav.Link as={Link} to="/contact">Contact</Nav.Link>

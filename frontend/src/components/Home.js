@@ -32,7 +32,7 @@ const Home = () =>  {
 
     <main>
         <section className="image-part main-grid">
-            <h1 className="title">Shopping made easy at a push of a button. <span className="bold">Duck'N'Stuff more stuff for your buck</span> that fits your budget.</h1>
+            <h1 className="title">Shopping made easy at a push of &nbsp;&nbsp;a button. <span className="bold">Duck'N'Stuff more stuff for your buck</span> that fits your&nbsp;&nbsp;&nbsp;&nbsp; budget.</h1>
             <p className="intro">Saving money for things that really matter.</p>
            <Link to="/contact">
             <motion.button
